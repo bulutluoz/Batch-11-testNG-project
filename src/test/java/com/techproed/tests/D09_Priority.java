@@ -75,6 +75,7 @@ public class D09_Priority {
 
     @AfterClass
     public void tearDown() {
+
         driver.quit();
     }
 
