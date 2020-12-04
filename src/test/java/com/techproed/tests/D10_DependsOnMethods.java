@@ -34,7 +34,7 @@ public class D10_DependsOnMethods {
 
     @Test
     public void homePageTest(){
-        driver.get("https://www.walmart.com/");
+        driver.get("https://www.youtube.com/");
         //		1. Test : Wallmart ana sayfaya gittiginizi test edin
         WebElement logo=driver.findElement(By.className("z_a"));
         Assert.assertTrue(logo.isDisplayed());
