@@ -102,6 +102,8 @@ public class D11_Softassert2 {
 
     @AfterClass
     public void tearDown(){
+
+
         driver.close();
     }
 
