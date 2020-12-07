@@ -90,6 +90,9 @@ public class D10_DropDownHomework {
         String sonucYazisi=sonucYazisiElementi.getText();
         Assert.assertEquals(sonucYazisi,"Foreign currency cash was successfully purchased.");
 
+
+
+
     }
         @AfterClass
         public void tearDown () {

@@ -57,6 +57,7 @@ public class D11_Homework {
         softAssert.assertTrue(ikinciKitap.getText().contains("History"));
         softAssert.assertTrue(besinciKitap.getText().contains("History"));
 
+
         // 5. cikan sonuc sayisinin 50000'den buyuk oldugunu dogrulayin
         WebElement sonucYazisiElement= driver.findElement(By.xpath("(//div[@class='a-section a-spacing-small a-spacing-top-small'])[1]"));
         String sonucYazisi=sonucYazisiElement.getText();
@@ -71,9 +72,9 @@ public class D11_Homework {
         int sonucSayisi=Integer.parseInt(sonucYazisi);
 
 
-        softAssert.assertTrue(sonucSayisi>10000);
-
+        softAssert.assertTrue(sonucSayisi>50000);
         softAssert.assertAll();
+
     }
 
 

@@ -42,11 +42,10 @@ public class D11_SoftAssert1 {
         driver.get("https://www.sahibinden.com/");
         SoftAssert softAssert = new SoftAssert();
         // 2. Basliginin "Sahibinden Satılık, Kiralık, Emlak, Oto, Alışveriş Ürünleri" oldugunu dogrulayin
-        String expectedTitle="Sahibinden Satılık, Kiralık, Emlak, Oto, Alışveriş Ürünlerix";
+        String expectedTitle="Sahibinden Satılık, Kiralık, Emlak, Oto, Alışveriş Ürünleri";
         String actualTitle= driver.getTitle();
 
         softAssert.assertEquals(actualTitle,expectedTitle,"anasayfa title'i istedigim gibi degil");
-
 
         // 3. search kutusuna araba yazip arattirin
         WebElement searchBox=driver.findElement(By.id("searchText"));
@@ -56,9 +55,7 @@ public class D11_SoftAssert1 {
         System.out.println(sonucYaziElementi.getText());
         // 5.	sonuc yazisinin "araba" icerdigini dogrulayin
 
-        softAssert.assertTrue(sonucYaziElementi.getText().contains("arabax"),"arama sonuc sayisi araba kelimesi icermiyor");
-
-
+        softAssert.assertTrue(sonucYaziElementi.getText().contains("araba"),"arama sonuc sayisi araba kelimesi icermiyor");
 
         //6.	Tumunu temizle linkini tiklayin
         driver.findElement(By.linkText("Tümünü Temizle")).click();
@@ -68,15 +65,15 @@ public class D11_SoftAssert1 {
 
         //8.	Sonuc yazisinin “araba” kelimesi icermedigini dogrulayin
 
-        softAssert.assertFalse(sonucYaziElementi2.getText().contains("bulundu"),"son test basarisiz");
+        softAssert.assertFalse(sonucYaziElementi2.getText().contains("araba"),"son test basarisiz");
 
         softAssert.assertAll();
+        System.out.println("bu satir calisir mi?");
     }
-
-
 
     @AfterClass
     public void tearDown(){
+
         driver.close();
     }
 }
