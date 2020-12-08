@@ -5,6 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -25,11 +26,14 @@ public class D12_IFrame {
     }
 
     @Test
-    public void iFrameTest(){
+    public void iFrameTest() throws InterruptedException {
         driver.get("https://html.com/tags/iframe/");
         //1.adim iFrame'e nasil gecis yapacagimiza(switch) karar veririz
         //  index,id,webElement olarak locate ederiz
         //  biz bu soruda 3.yolu tercih ettik
+
+        Thread.sleep(2000);
+        Actions actions=new Actions(driver);
 
 
         WebElement iFrame=driver.findElement(By.xpath("//iframe[@class='lazy-loaded']"));
@@ -43,7 +47,6 @@ public class D12_IFrame {
         driver.findElement(By.xpath("//button[@class='ytp-large-play-button ytp-button']")).click();
 
     }
-
 
 
 
