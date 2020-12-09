@@ -2,6 +2,7 @@ package com.techproed.tests;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -33,7 +34,11 @@ public class D12_IFrame {
         //  biz bu soruda 3.yolu tercih ettik
 
         Thread.sleep(2000);
-        Actions actions=new Actions(driver);
+        Actions actions =new Actions(driver);
+        actions.sendKeys(Keys.PAGE_DOWN)
+                .sendKeys(Keys.PAGE_DOWN).perform();
+
+
 
 
         WebElement iFrame=driver.findElement(By.xpath("//iframe[@class='lazy-loaded']"));
