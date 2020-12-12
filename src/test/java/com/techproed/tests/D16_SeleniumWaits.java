@@ -65,4 +65,5 @@ public class D16_SeleniumWaits extends TestBase {
 
         Assert.assertTrue(itsBackYazisiElementi.isDisplayed());
     }
+
 }
