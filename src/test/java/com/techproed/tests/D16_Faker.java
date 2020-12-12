@@ -7,6 +7,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class D16_Faker extends TestBase {
@@ -58,22 +59,16 @@ public class D16_Faker extends TestBase {
         Select select2=new Select(yilDropDown);
         select2.selectByValue("1956");
 
-         Thread.sleep(15000);
 
-
-
-
-
-        //“surname” giris kutusuna bir soyisim yazin
-        //“email” giris kutusuna bir email yazin
-        //“email” onay kutusuna emaili tekrar yazin
-        //Bir sifre girin
-        //Tarih icin gun secin
-        //Tarih icin ay secin
-        //Tarih icin yil secin
         //Cinsiyeti secin
+        WebElement erkekRadioButton=driver.findElement(By.xpath("(//input[@name='sex'])[2]"));
+        erkekRadioButton.click();
+        WebElement ozelRadioButton=driver.findElement(By.xpath("(//input[@name='sex'])[3]"));
         //Isaretlediginiz cinsiyetin secili, diger cinsiyet kutusunun secili olmadigini test edin.
-        //Sayfayi kapatin
+
+        Assert.assertTrue(erkekRadioButton.isSelected());
+        Assert.assertFalse(ozelRadioButton.isSelected());
+
 
 
     }
