@@ -4,6 +4,7 @@ import com.techproed.utilities.TestBase;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -27,7 +28,7 @@ public class D18_WebTables extends TestBase {
     @Test
     public void tableTest() throws InterruptedException {
         login();
-        Thread.sleep(5000);
+
         //	Table’daki tum body’I ve başlıkları(headers) konsolda yazdırın.
         WebElement tBody=driver.findElement(By.xpath("//tbody"));
 
@@ -64,11 +65,105 @@ public class D18_WebTables extends TestBase {
         }
      //				○ 4.satirdaki(row) elementleri konsolda yazdırın.
 
-        System.out.println(satirlarListesi.get(4).getText());
+        System.out.println(satirlarListesi.get(3).getText());
      // listeden elemani almadan locate ederek 4.satiri yazdirin
+        WebElement dorduncuSatir=driver.findElement(By.xpath("//tbody//tr[4]"));
+        System.out.println(dorduncuSatir.getText());
 
 
     }
 
+    @Test
+    public void printCells(){
+        //● printCells() metodu oluşturun //td
+
+
+        login();
+        List<WebElement> tumHucrelerListesi=driver.findElements(By.xpath("//tbody//td"));
+        //				○ table body’sinde bulunan toplam hücre(cell) sayısını bulun.
+        System.out.println("tablodaki hucre sayisi : " + tumHucrelerListesi.size());
+        //				○ Table body’sinde bulunan hücreleri(cells) konsolda yazdırın.
+        for (WebElement w: tumHucrelerListesi
+             ) {
+            System.out.println(w.getText());
+        }
+
+    }
+
+    @Test
+    public void printColumns(){
+        //● printColumns() metodu oluşturun
+
+        login();
+        //				○ table body’sinde bulunan toplam sutun(column) sayısını bulun.
+
+        List<WebElement> basliklarList =driver.findElements(By.xpath("//thead//th"));
+        int sutunSayisi=basliklarList.size(); // 9
+
+
+        //	○ 5.column daki elementleri konsolda yazdırın.
+
+        List<WebElement> allSutun = driver.findElements(By.xpath("//tbody//td[5]"));
+        for (WebElement w: allSutun
+        ) {
+            System.out.println(w.getText());
+        }
+
+        //	○ Table body’sinde bulunan sutunlari(column) konsolda yazdırın.
+        // her sutunun basina sutun header'ini yazsin
+
+        for ( int i=1; i<=sutunSayisi; i++){
+
+
+            List<WebElement>allsutun= driver.findElements(By.xpath("//tbody//td[" + i +"]"));
+            WebElement sutunBasligi=driver.findElement(By.xpath("//thead//th[" + i + "]"));
+            System.out.println(sutunBasligi.getText());
+
+            for (WebElement w:allsutun) {
+                System.out.println(w.getText());
+            }
+        }
+
+    }
+
+    @Test
+    public void asd(){
+        login();
+
+        // 1.den 9.ya kadar sutun basliklarini yazdiralim
+
+        for (int i=1; i<=9 ; i++){
+
+            WebElement ucuncuSutunBasligi=driver.findElement(By.xpath("//thead//th[" + i + " ]"));
+            System.out.println(ucuncuSutunBasligi.getText());
+        }
+
+    }
+
+    public String printData(int satir,int sutun){
+        //1. Bir metod oluşturun : printData(int row, int column);
+        // a. Satır(row) ve sütun(column) numarasını girdiğinizde,
+        // printData metodu bu  hücredeki(cell) veriyi yazdırmalıdır.
+
+        WebElement yazdirilacakData=driver.findElement(By.xpath("//tbody//tr["+satir+"]//td["+sutun+"]"));
+        System.out.println(yazdirilacakData.getText());
+
+
+        return yazdirilacakData.getText();
+    }
+
+    @Test
+    public void printDataTest(){
+        //2. Baska bir Test metodu oluşturun: printDataTest();
+        // a. Ve bu metodu printData() methodunu cagirmak icin kullanin.
+        // b. Örnek: printData (3,5); => 3. satır, 5. Sütundaki veriyi yazdırmalıdır
+        // c. yazdirilan datanin olmasi gereken dataya esit oldugunu test edin
+        login();
+
+        //yazdirilanin NewYork oldugunu test edin
+
+        Assert.assertEquals(printData(3,5),"NewYork");
+
+    }
 
 }
