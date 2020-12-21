@@ -1,0 +1,20 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+    <suite name="smoke test automation" verbose="2">
+        <test name="smoke tests">
+            <classes>
+               <class name="com.techproed.tests.D12_Alerts">
+                   <methods>
+                       <exclude name="acceptAlert"></exclude>
+                   </methods>
+               </class>
+               <class name="com.techproed.tests.D09_Dropdown">
+                    <methods>
+                        <include name="tumListe"></include>
+                    </methods>
+               </class>
+            </classes>
+        </test>
+    </suite>
+
+
+
