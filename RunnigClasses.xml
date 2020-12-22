@@ -1,0 +1,10 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="birden fazla class calistirma">
+    <test name="ikinci test">
+        <classes>
+            <class name="com.techproed.tests.D12_Alerts"></class>
+            <class name="com.techproed.tests.D11_SoftAssert1"></class>
+            <class name="com.techproed.smokeTest.PositiveTest"></class>
+        </classes>
+    </test>
+</suite>

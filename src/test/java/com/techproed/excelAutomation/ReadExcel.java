@@ -35,6 +35,8 @@ public class ReadExcel {
 
         String hucre=cell.toString();
         System.out.println(hucre);
+        fileInputStream.close();
+        workbook.close();
 
     }
 
@@ -78,6 +80,8 @@ public class ReadExcel {
 
         System.out.println(baskentler);
         // 1=Afghanistan,Kabul,Afganistan,Kabil
+        fileInputStream.close();
+        workbook.close();
     }
 
 

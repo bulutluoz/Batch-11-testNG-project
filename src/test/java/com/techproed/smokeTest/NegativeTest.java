@@ -26,7 +26,7 @@ public class NegativeTest extends TestBase {
     }
 
 
-    @Test
+    @Test(groups = "grup4")
     public void yanlisSifreTesti(){
         giris();
         WebElement userNameTexBox=driver.findElement(By.id("UserName"));
@@ -38,7 +38,7 @@ public class NegativeTest extends TestBase {
     }
 
 
-    @Test
+    @Test(groups = "grup4")
     public void yanlisKullaniciAdiTesti(){
         giris();
         WebElement userNameTexBox=driver.findElement(By.id("UserName"));

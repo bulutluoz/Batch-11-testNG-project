@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="paket calistirma">
+    <test name="excel paketi">
+        <packages>
+            <package name="com.techproed.excelAutomation"></package>
+            <package name="com.techproed.smokeTest"></package>
+        </packages>
+    </test>
+</suite>

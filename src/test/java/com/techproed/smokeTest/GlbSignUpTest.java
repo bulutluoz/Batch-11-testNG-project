@@ -7,7 +7,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class GlbSignUpTest {
-    @Test
+    @Test (groups = "grup1")
     public void signUp(){
 
         Driver.getDriver().get(ConfigReader.getProperty("gt_signUp_url"));

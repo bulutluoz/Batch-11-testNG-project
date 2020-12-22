@@ -1,0 +1,19 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="running method">
+    <test name="method calistirma">
+        <classes>
+            <class name="com.techproed.tests.D12_Alerts">
+                <methods>
+                    <exclude name="dismissAlert"></exclude>
+                </methods>
+            </class>
+            <class name="com.techproed.tests.D18_WebTables">
+                <methods>
+                    <include name="printDataTest"></include>
+                    <include name="printColumns"></include>
+                </methods>
+            </class>
+
+        </classes>
+    </test>
+</suite>

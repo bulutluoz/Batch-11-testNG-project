@@ -1,0 +1,11 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="runnig Positive Smoke Test">
+    
+    <test name="smoke test">
+        <classes>
+            <class name="com.techproed.smokeTest.PositiveTestPOM"></class>
+
+        </classes>
+    </test>
+</suite>

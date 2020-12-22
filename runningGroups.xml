@@ -1,0 +1,17 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="grup calistirma">
+    <test name="Regression1">
+        <groups>
+            <run>
+                <exclude name="grup2"></exclude>
+                <include name="grup1"  />
+               
+            </run>
+        </groups>
+
+        <packages>
+            <package name="com.techproed.smokeTest"></package>
+        </packages>
+    </test>
+
+</suite>
