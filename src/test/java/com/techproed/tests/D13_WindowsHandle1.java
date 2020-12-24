@@ -33,6 +33,7 @@ public class D13_WindowsHandle1 extends TestBase {
                 ikincisayfaWindowHandle=w;
             }
         }
+        // Elemental Selenium: Receive a Free, Weekly Tip on Using Selenium like a Pro
         // 5.adim artik iki sayfanin da windowHandle'ina sahibim.
         // istedigim gibi sayfalar arsinda gecis yapabilirim
 
