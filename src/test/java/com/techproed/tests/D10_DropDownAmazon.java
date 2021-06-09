@@ -19,7 +19,7 @@ import java.util.concurrent.TimeUnit;
 public class D10_DropDownAmazon {
     //● https://www.amazon.com/ adresine gidin.
     //		- Test 1
-    //			Arama kutusunun yanindaki kategori menusundeki kategori sayisinin 45 oldugunu test edin
+    //			Arama kutusunun yanindaki kategori menusundeki kategori sayisinin 27 oldugunu test edin
     //		-Test 2
     //			1. Kategori menusunden Books secenegini  secin
     //			2. Arama kutusuna Java yazin ve aratin
@@ -47,7 +47,7 @@ public class D10_DropDownAmazon {
         List<WebElement> tumListe= select.getOptions();
 
         int kategoriSayisi=tumListe.size()-1;
-        Assert.assertEquals(kategoriSayisi,45);
+        Assert.assertEquals(kategoriSayisi,27);
 
     }
 
